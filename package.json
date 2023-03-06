@@ -1,0 +1,17 @@
+{
+  "name": "xlsx-addon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "xlsx": "file:/home/royaltsp/tsp/libs/node/xlsx/node_modules/xlsx",
+    "exceljs": "file:/home/royaltsp/tsp/libs/node/exceljs/node_modules/exceljs"
+  },
+  "devDependencies": {
+    "bun-types": "file:/home/royaltsp/tsp/libs/node/@types/node_modules/bun-types",
+    "@types/xlsx": "file:/home/royaltsp/tsp/libs/node/xlsx/node_modules/@types/xlsx"
+  }
+}
