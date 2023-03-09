@@ -9,6 +9,9 @@ const filePath = join(homeDir, 'excel-files', 'QualitiaTestData_New_5k.xlsx')
 const filePath2 = join(homeDir, 'excel-files', 'users2.xlsx')
 const filePath3 = join(homeDir, 'excel-files', 'QualitiaTestData_New_5k-new.xlsx')
 const filePath4 = join(homeDir, 'excel-files', 'users.xlsx')
+const filePath15 = join(homeDir, 'excel-files', '87337.xlsx')
+const filePath16 = join(homeDir, 'excel-files', 'BLSE_CreditUnderwriting Stage_Enhacements1.xlsx')
+const filePath17 = join(homeDir, 'excel-files', 'US_77809_Risk Segmentation and TTD Monitoring-Credit Underwriting-PSBL.xlsx')
 
 const readXLSX = (params: {
   filePath: string,
@@ -85,22 +88,27 @@ const writeXLSXWithStream = (params: {
   })
 }
 
-const rowsCount = 25000
-const columnCount = 300
-const cellContentPrefix = 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'
+const rowsCount = 50000
+const columnCount = 100
+const cellContentPrefix = '$NULL'
 
 const main = async () => {
   // const rows = [...new Array(rowsCount)].map((_, i) => {
   //   return [...new Array(columnCount)].map((_, j) => `${cellContentPrefix}${i}${j}`)
   // })
-  // writeXLSXWithStream({ rows, filePath: filePath2 })
+  const writeFilePath = join(homeDir, 'excel-files', `${rowsCount}x${columnCount}.xlsx`)
+  // writeXLSXWithStream({ rows, filePath: writeFilePath })
   // writeXLSX({ rows, filePath: filePath2 })
+  console.log((await streamXLSX({ filePath: writeFilePath })).length)
+  // console.log((await streamXLSX({ filePath: filePath15 })).length)
+  // console.log((await streamXLSX({ filePath: filePath16 })).length)
+  // console.log((await streamXLSX({ filePath: filePath17 })).length)
   // console.log(readXLSX({ filePath: filePath2 }).length)
   // console.log((await streamXLSX({ filePath: filePath2 })).length)
   // console.log(readXLSX({ filePath: filePath3 }).length)
   // console.log((await streamXLSX({ filePath: filePath3 })).length)
-  console.log(readXLSX({ filePath: filePath4 }).length)
-  console.log((await streamXLSX({ filePath: filePath4 })).length)
+  // console.log(readXLSX({ filePath: filePath4 }).length)
+  // console.log((await streamXLSX({ filePath: filePath4 })).length)
   // console.log(readXLSX({ filePath }).length)
   // console.log((await streamXLSX({ filePath })).length)
 }
